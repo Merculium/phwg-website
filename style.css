@@ -1,24 +1,18 @@
 :root {
-  --rose-50: #fdf2f5;
-  --rose-100: #fad9e4;
-  --rose-200: #f4adc0;
-  --rose-300: #e0608a;
-  --rose-400: #c2305e;
-  --rose-500: #9e1f48;
-  --mauve-50: #f7f7f8;
-  --mauve-100: #eeecf0;
-  --mauve-200: #dddae1;
+  --rose-400: #b03060;
+  --rose-500: #8c2050;
+  --rose-300: #d4608a;
+  --mauve-50: #f8f8f9;
+  --mauve-100: #f0eff2;
+  --mauve-200: #e0dde5;
   --mauve-300: #b8b4bf;
   --mauve-400: #8f8a99;
   --mauve-500: #6b6575;
   --logo-mauve: #8f79c4;
-  --nav-bg: #f0eef3;
-  --services-bg: #e8e4ef;
-  --about-bg: #ddd8e8;
-  --contact-bg: #2e2840;
+  --nav-bg: #f2f2f2;
   --warm-white: #ffffff;
-  --warm-dark: #211e26;
-  --text-muted: #625e6e;
+  --warm-dark: #1e1c22;
+  --text-muted: #5e5a68;
   --text-light: #a09aad;
 }
 
@@ -42,9 +36,9 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(240, 238, 243, 0.92);
+  background: rgba(242, 242, 242, 0.92);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(184, 180, 191, 0.2);
+  border-bottom: 1px solid rgba(180, 180, 185, 0.2);
 }
 
 .nav-logo {
@@ -336,7 +330,7 @@ section { padding: 7rem 6rem; }
 }
 
 /* ── SERVICES ── */
-#services { background: var(--services-bg); }
+#services { background: #fff; }
 
 .services-layout {
   display: grid;
@@ -403,7 +397,7 @@ section { padding: 7rem 6rem; }
 .about-image {
   position: relative;
   min-height: 600px;
-  background: var(--about-bg);
+  background: var(--mauve-100);
   overflow: hidden;
 }
 
@@ -433,7 +427,7 @@ section { padding: 7rem 6rem; }
   flex-direction: column;
   justify-content: center;
   padding: 7rem 5rem;
-  background: var(--about-bg);
+  background: #fff;
 }
 
 .about-content p {
@@ -453,7 +447,7 @@ section { padding: 7rem 6rem; }
 }
 
 /* ── CONTACT ── */
-#contact { background: var(--contact-bg); color: var(--mauve-100); }
+#contact { background: #2a2a2e; color: var(--mauve-200); }
 
 #contact .section-eyebrow { color: var(--mauve-300); }
 #contact .section-title { color: #fff; }
@@ -556,8 +550,8 @@ section { padding: 7rem 6rem; }
 
 /* ── FOOTER ── */
 footer {
-  background: var(--contact-bg);
-  border-top: 1px solid rgba(184, 180, 191, 0.2);
+  background: #2a2a2e;
+  border-top: 1px solid rgba(180, 180, 185, 0.15);
   padding: 2rem 6rem;
   display: flex;
   align-items: center;
