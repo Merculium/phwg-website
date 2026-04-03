@@ -5,16 +5,17 @@
   --rose-300: #e87878;
   --rose-400: #c94040;
   --rose-500: #a32828;
-  --mauve-50: #f5f2ef;
-  --mauve-100: #ede8e2;
-  --mauve-200: #ddd5cc;
-  --mauve-300: #c4b8ac;
-  --mauve-400: #a09080;
-  --mauve-500: #7a6e63;
+  --mauve-50: #f7f7f8;
+  --mauve-100: #eeecf0;
+  --mauve-200: #dddae1;
+  --mauve-300: #b8b4bf;
+  --mauve-400: #8f8a99;
+  --mauve-500: #6b6575;
+  --logo-mauve: #8f79c4;
   --warm-white: #ffffff;
-  --warm-dark: #1c1816;
-  --text-muted: #6b6358;
-  --text-light: #a89e95;
+  --warm-dark: #211e26;
+  --text-muted: #625e6e;
+  --text-light: #a09aad;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -47,7 +48,7 @@ nav {
   font-size: 1.4rem;
   font-weight: 300;
   letter-spacing: 0.12em;
-  color: var(--warm-dark);
+  color: var(--logo-mauve);
   text-decoration: none;
   font-style: italic;
 }
@@ -564,7 +565,7 @@ footer {
   font-size: 1.1rem;
   font-weight: 300;
   font-style: italic;
-  color: var(--mauve-200);
+  color: var(--logo-mauve);
   text-decoration: none;
 }
 
