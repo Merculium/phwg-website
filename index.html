@@ -1,307 +1,655 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PHOTONAUTKA — Fotografia Kobieca</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-</head>
-<body>
+:root {
+  --rose-50: #f5f2fb;
+  --rose-100: #e8e1f5;
+  --rose-200: #d2c4ed;
+  --rose-300: #b3a0dc;
+  --rose-400: #8f79c4;
+  --rose-500: #6e5aaa;
+  --mauve-50: #f2f0f8;
+  --mauve-100: #e4dff2;
+  --mauve-200: #c9bfe6;
+  --mauve-300: #a896d4;
+  --mauve-400: #8571bd;
+  --mauve-500: #6352a3;
+  --warm-white: #f8f6fd;
+  --warm-dark: #1e1728;
+  --text-muted: #6b6080;
+  --text-light: #a89ec0;
+}
 
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="nav-logo">PHOTONAUTKA</a>
-    <ul class="nav-links">
-      <li><a href="#work">Portfolio</a></li>
-      <li><a href="#services">Usługi</a></li>
-      <li><a href="#about">O mnie</a></li>
-      <li><a href="#contact">Kontakt</a></li>
-    </ul>
-  </nav>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-left">
-      <p class="hero-eyebrow">Fotografia Kobieca</p>
-      <h1 class="hero-title">
-        Odkryj<br />
-        swoją<br />
-        <em>pewność siebie</em>
-      </h1>
-      <p class="hero-sub">
-        Każda kobieta zasługuje na to, by być świadomą swojego piękna. Ja lubię w tym pomagać. Tworzę przestrzeń fotograficzną, w której możesz odpuścić i po prostu być sobą.
-      </p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn-primary">Umów się</a>
-        <a href="#work" class="btn-outline">Zobacz moje portfolio</a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="hero-img-grid">
-        <!-- Replace each div with <img src="images/your-photo.jpg" alt="..."> -->
-<img src="assets/wg12.jpg" alt="Photonautka">
-       <img src="assets/wg05.jpg" alt="Photonautka">
-        <img src="assets/wg19.jpg" alt="Photonautka">
-        <img src="assets/wg22.jpg" alt="Photonautka">
-      </div>
-    </div>
-  </section>
+html { scroll-behavior: smooth; }
 
-  <!-- PHOTO GRID (main body) -->
-  <section id="work">
-    <div class="gallery-header reveal">
-      <p class="section-eyebrow">Portfolio</p>
-      <h2 class="section-title">Najnowsze <em>prace</em></h2>
-      <div class="divider" style="margin: 1.5rem auto 1.5rem;"></div>
-      <p>Wyselekcjonowany wybór sesji - każda z udziałem kobiety, która powiedziała sobie „tak”.</p>
-      <a href="https://instagram.com/photonautka" target="_blank" class="instagram-link" style="margin-top: 1rem;">Obserwuj mnie na instagramie ↗</a>
-    </div>
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--warm-white);
+  color: var(--warm-dark);
+  overflow-x: hidden;
+}
 
-    <!--
-      HOW TO ADD YOUR PHOTOS:
-      1. Create a folder called "images/" next to this file
-      2. Copy your Instagram photos into it (aim for multiples of 3)
-      3. For each item, replace the .photo-placeholder div with:
-         <img src="images/your-photo.jpg" alt="Portrait session" />
-    -->
-    <div class="photo-grid">
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.25rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(248, 246, 253, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(179, 160, 220, 0.2);
+}
 
-      <div class="photo-grid-item reveal">
-        <div class="assets/wg16.jpg"></div>
-        <div class="photo-grid-overlay"><span>View</span></div>
-      </div>
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--warm-dark);
+  text-decoration: none;
+  font-style: italic;
+}
 
-      <div class="photo-grid-item reveal">
-        <div class="assets/wg17.jpg"></div>
-        <div class="photo-grid-overlay"><span>View</span></div>
-      </div>
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
 
-      <div class="photo-grid-item reveal">
-        <div class="assets/wg18.jpg"></div>
-        <div class="photo-grid-overlay"><span>View</span></div>
-      </div>
+.nav-links a {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
-      <div class="photo-grid-item reveal">
-        <div class="assets/wg12.jpg"></div>
-        <div class="photo-grid-overlay"><span>View</span></div>
-      </div>
+.nav-links a:hover { color: var(--rose-400); }
 
-      <div class="photo-grid-item reveal">
-        <div class="assets/wg11.jpg"></div>
-        <div class="photo-grid-overlay"><span>View</span></div>
-      </div>
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 5rem;
+}
 
-      <div class="photo-grid-item reveal">
-        <div class="assets/wg13.jpg"></div>
-        <div class="photo-grid-overlay"><span>View</span></div>
-      </div>
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 4rem 6rem 6rem;
+}
 
-      <div class="photo-grid-item reveal">
-        <div class="assets/wg05.jpg"></div>
-        <div class="photo-grid-overlay"><span>View</span></div>
-      </div>
+.hero-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--rose-400);
+  margin-bottom: 1.5rem;
+}
 
-      <div class="photo-grid-item reveal">
-        <div class="assets/wg06.jpg"></div>
-        <div class="photo-grid-overlay"><span>View</span></div>
-      </div>
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--warm-dark);
+  margin-bottom: 2rem;
+}
 
-      <div class="photo-grid-item reveal">
-        <div class="assets/wg04.jpg"></div>
-        <div class="photo-grid-overlay"><span>View</span></div>
-      </div>
+.hero-title em {
+  font-style: italic;
+  color: var(--rose-400);
+}
 
-      <div class="photo-grid-item reveal">
-        <div class="assets/wg19.jpg"></div>
-        <div class="photo-grid-overlay"><span>View</span></div>
-      </div>
+.hero-sub {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 400px;
+  margin-bottom: 3rem;
+}
 
-      <div class="photo-grid-item reveal">
-        <div class="assets/wg22.jpg"></div>
-        <div class="photo-grid-overlay"><span>View</span></div>
-      </div>
+.btn-primary {
+  display: inline-block;
+  padding: 0.9rem 2.5rem;
+  background: var(--rose-400);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
 
-      <div class="photo-grid-item reveal">
-        <div class="assets/wg21.jpg"></div>
-        <div class="photo-grid-overlay"><span>View</span></div>
-      </div>
+.btn-primary:hover {
+  background: var(--rose-500);
+  transform: translateY(-2px);
+}
 
-    </div>
-  </section>
+.btn-outline {
+  display: inline-block;
+  padding: 0.9rem 2.5rem;
+  background: transparent;
+  color: var(--rose-400);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--rose-300);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="services-layout">
-      <div>
-        <p class="section-eyebrow">What I offer</p>
-        <h2 class="section-title">Sesje <em>indywidualne</em></h2>
-        <div class="divider"></div>
-        <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.9; margin-bottom: 2rem;">
-Dużo śmiechu, zero pośpiechu, a w międzyczasie nagle zaczynasz widzieć siebie inaczej. </p>
-        <a href="#contact" class="btn-primary">Umów się na sesję</a>
-      </div>
+.btn-outline:hover {
+  background: var(--rose-50);
+  border-color: var(--rose-400);
+}
 
-      <div class="services-cards">
-        <div class="service-card reveal">
-          <p class="service-number">01</p>
-          <h3 class="service-name">Portret Pewności Siebie</h3>
-          <p class="service-desc">Zrelaksowana, godzinna sesja zdjęciowa w miejscu, w którym poczujesz się jak Ty. Idealna dla kobiet, które chcą się celebrować - nie potrzebujesz specjalnej okazji.</p>
-          <p class="service-price">Umów się na sesję</p>
-        </div>
+.hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-        <div class="service-card reveal">
-          <p class="service-number">02</p>
-          <h3 class="service-name">Mini Sesja</h3>
-          <p class="service-desc">30 minut - opcja idealna gdy nie masz dużo czasu. Świetnie sprawdzi się jako przedsmak prawilnej sesji lub jako szybka aktualizacja.</p>
-          <p class="service-price">Umów się na sesję</p>
-        </div>
+.hero-right {
+  position: relative;
+  overflow: hidden;
+  background: var(--rose-100);
+}
 
-        <div class="service-card reveal">
-          <p class="service-number">03</p>
-          <h3 class="service-name">Głębokie Doświadczenie</h3>
-          <p class="service-desc">Dwie godziny, różne stylizacja lub lokalizacje. Dla kobiet, które chcą zanurkować głębiej.</p>
-          <p class="service-price">Umów się na sesję</p>
-        </div>
-      </div>
-    </div>
-  </section>
+.hero-img-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
+  gap: 3px;
+}
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="about-image">
-      <!-- Replace with: <img src="images/about-me.jpg" alt="Your name" /> -->
-      <div class="about-image-placeholder">your photo here</div>
-    </div>
-    <div class="about-content reveal">
-      <p class="section-eyebrow">Po drugiej stronie obiektywu</p>
-      <h2 class="section-title">Cześć, jestem <em>Weronika</em></h2>
-      <div class="divider"></div>
-      <p>
-        Fotografia nie jest moją pracą - jest moją pasją. To, co mnie napędza, to nie sprzęt czy technika, ale ten moment, w którym kobieta przestaje wstrzymywać oddech i po prostu… promienieje przed kamerą.
-      </p>
-      <p>
-        Moje sesje to bezpieczna przestrzeń. Poruszamy się w Twoim tempie, rozmawiamy, znajdujemy to, co rozświetla Twoją twarz - a potem to fotografuję. To wszystko.
-      </p>
-      <p>
-        Jeśli kiedykolwiek pomyślałaś "jestem niefotogeniczna" - z chęcią wyprowadzę Cię z błędu.
-      </p>
-      <p class="about-signature">Photonautka Weronika</p>
-    </div>
-  </section>
+.hero-img-cell {
+  position: relative;
+  overflow: hidden;
+}
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="contact-layout">
-      <div class="contact-left reveal">
-        <p class="section-eyebrow">Bądzmy w kontakcie</p>
-        <h2 class="section-title">Ready when <em>you are</em></h2>
-        <div class="divider"></div>
-        <p>
-Opowiedz coś o sobie – co Cię cieszysz, czym się denerwujesz i co masz nadzieję poczuć na sesji.        </p>
-        <div class="contact-detail">
-          <span class="contact-detail-label">Email</span>
-          <span class="contact-detail-value">photonautka@gmail.com</span>
-        </div>
-        <div class="contact-detail">
-          <span class="contact-detail-label">Instagram</span>
-          <span class="contact-detail-value">@photonautka</span>
-        </div>
-        <div class="contact-detail">
-          <span class="contact-detail-label">Lokalizacja</span>
-          <span class="contact-detail-value">Województwo Łódzkie</span>
-        </div>
-      </div>
+.hero-img-cell:nth-child(1) { background: linear-gradient(135deg, var(--rose-100), var(--mauve-100)); }
+.hero-img-cell:nth-child(2) { background: linear-gradient(135deg, var(--mauve-200), var(--rose-200)); }
+.hero-img-cell:nth-child(3) { background: linear-gradient(135deg, var(--rose-200), var(--rose-100)); }
+.hero-img-cell:nth-child(4) { background: linear-gradient(135deg, var(--mauve-100), var(--rose-50)); }
 
-      <form class="contact-form reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <!--
-          HOW TO SET UP THE CONTACT FORM (free, no backend needed):
-          1. Go to formspree.io and create a free account
-          2. Create a new form — you'll get a form ID
-          3. Replace YOUR_FORM_ID in the action URL above
-        -->
-        <div class="form-group">
-          <label for="name">Your name</label>
-          <input type="text" id="name" name="name" placeholder="Sofia" required />
-        </div>
-        <div class="form-group">
-          <label for="email">Email address</label>
-          <input type="email" id="email" name="email" placeholder="sofia@example.com" required />
-        </div>
-        <div class="form-group">
-          <label for="session">I'm interested in</label>
-          <select id="session" name="session">
-            <option value="">Select a session type</option>
-            <option value="confidence">Confidence Portrait Session</option>
-            <option value="mini">Mini Session</option>
-            <option value="full">The Full Experience</option>
-            <option value="other">Not sure yet — let's talk</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Tell me about you</label>
-          <textarea id="message" name="message" placeholder="What's the occasion? What are you hoping to feel?"></textarea>
-        </div>
-        <button type="submit" class="btn-send">Send message</button>
-      </form>
-    </div>
-  </section>
+.hero-img-cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
 
-  <!-- FOOTER -->
-  <footer>
-    <a href="#" class="footer-logo">PHOTONAUTKA</a>
-    <p class="footer-copy">© 2026 PHOTONAUTKA. All rights reserved.</p>
-    <div class="footer-social">
-      <a href="https://instagram.com/photonautka" target="_blank">Instagram ↗</a>
-    </div>
-  </footer>
+.hero-img-cell:hover img { transform: scale(1.04); }
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lightbox-close">✕</button>
-    <img id="lightbox-img" src="" alt="" />
-  </div>
+.placeholder-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--rose-400);
+  letter-spacing: 0.08em;
+}
 
-  <script>
-    // Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    reveals.forEach(el => observer.observe(el));
+/* ── SECTION SHARED ── */
+section { padding: 7rem 6rem; }
 
-    // Stagger grid items
-    document.querySelectorAll('.photo-grid-item.reveal').forEach((el, i) => {
-      el.style.transitionDelay = (i * 0.06) + 's';
-    });
+.section-eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--rose-400);
+  margin-bottom: 1rem;
+}
 
-    // Lightbox
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    document.querySelectorAll('.photo-grid-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const img = item.querySelector('img');
-        if (img) {
-          lightboxImg.src = img.src;
-          lightboxImg.alt = img.alt;
-          lightbox.classList.add('active');
-        }
-      });
-    });
-    document.getElementById('lightbox-close').addEventListener('click', () => {
-      lightbox.classList.remove('active');
-    });
-    lightbox.addEventListener('click', e => {
-      if (e.target === lightbox) lightbox.classList.remove('active');
-    });
-  </script>
-</body>
-</html>
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--warm-dark);
+  margin-bottom: 1.5rem;
+}
+
+.section-title em { font-style: italic; color: var(--rose-400); }
+
+.divider {
+  width: 3rem;
+  height: 1px;
+  background: var(--rose-300);
+  margin: 1.5rem 0 2rem;
+}
+
+/* ── GALLERY ── */
+#work { background: #fff; }
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.gallery-header p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 480px;
+  margin: 0 auto 1rem;
+}
+
+.instagram-link {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rose-400);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rose-300);
+  padding-bottom: 2px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.instagram-link:hover {
+  color: var(--rose-500);
+  border-color: var(--rose-500);
+}
+
+/* ── 3-COLUMN INSTAGRAM GRID ── */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.photo-grid-item {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--mauve-50);
+  cursor: pointer;
+}
+
+.photo-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.photo-grid-item:hover img { transform: scale(1.06); }
+
+.photo-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 23, 40, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.4s ease;
+}
+
+.photo-grid-item:hover .photo-grid-overlay {
+  background: rgba(30, 23, 40, 0.38);
+}
+
+.photo-grid-overlay span {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #fff;
+  opacity: 0;
+  letter-spacing: 0.1em;
+  transition: opacity 0.4s ease;
+}
+
+.photo-grid-item:hover .photo-grid-overlay span { opacity: 1; }
+
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--rose-300);
+  letter-spacing: 0.06em;
+  min-height: 180px;
+}
+
+/* ── SERVICES ── */
+#services { background: var(--rose-50); }
+
+.services-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.services-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.service-card {
+  background: #fff;
+  padding: 2rem;
+  border-left: 3px solid var(--rose-300);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: var(--rose-400);
+  transform: translateX(4px);
+}
+
+.service-number {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: var(--rose-300);
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.service-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--warm-dark);
+  margin-bottom: 0.5rem;
+}
+
+.service-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.service-price {
+  margin-top: 1rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--rose-500);
+}
+
+/* ── ABOUT ── */
+#about {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  padding: 0;
+}
+
+.about-image {
+  position: relative;
+  min-height: 600px;
+  background: var(--mauve-100);
+  overflow: hidden;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--mauve-300);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  min-height: 600px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 7rem 5rem;
+  background: #fff;
+}
+
+.about-content p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+}
+
+.about-signature {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--rose-400);
+  margin-top: 1rem;
+}
+
+/* ── CONTACT ── */
+#contact { background: var(--warm-dark); color: var(--rose-50); }
+
+#contact .section-eyebrow { color: var(--rose-300); }
+#contact .section-title { color: var(--rose-50); }
+#contact .section-title em { color: var(--rose-300); }
+#contact .divider { background: var(--rose-500); }
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+}
+
+.contact-left p {
+  font-size: 0.95rem;
+  color: var(--rose-200);
+  line-height: 1.9;
+  margin-bottom: 2rem;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-detail-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--rose-400);
+  min-width: 80px;
+}
+
+.contact-detail-value {
+  font-size: 0.9rem;
+  color: var(--rose-100);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rose-300);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background: rgba(245, 242, 251, 0.06);
+  border: 1px solid rgba(179, 160, 220, 0.3);
+  color: var(--rose-50);
+  padding: 0.85rem 1rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--rose-400); }
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus { border-color: var(--rose-300); }
+
+.form-group textarea { resize: vertical; min-height: 120px; }
+
+.form-group select { appearance: none; cursor: pointer; }
+.form-group select option { background: var(--warm-dark); }
+
+.btn-send {
+  padding: 1rem 3rem;
+  background: var(--rose-400);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  align-self: flex-start;
+}
+
+.btn-send:hover { background: var(--rose-500); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--warm-dark);
+  border-top: 1px solid rgba(179, 160, 220, 0.15);
+  padding: 2rem 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--rose-200);
+  text-decoration: none;
+}
+
+.footer-copy {
+  font-size: 0.72rem;
+  color: var(--rose-500);
+  letter-spacing: 0.1em;
+}
+
+.footer-social a {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--rose-300);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover { color: var(--rose-100); }
+
+/* ── LIGHTBOX ── */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 23, 40, 0.93);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.active { display: flex; }
+
+.lightbox img {
+  max-width: 85vw;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  font-size: 1.5rem;
+  color: var(--rose-200);
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── MOBILE ── */
+@media (max-width: 900px) {
+  nav { padding: 1.25rem 1.5rem; }
+  .nav-links { gap: 1.5rem; }
+
+  .hero { grid-template-columns: 1fr; }
+  .hero-left { padding: 6rem 2rem 3rem; }
+  .hero-right { min-height: 50vw; }
+
+  section { padding: 5rem 2rem; }
+
+  .photo-grid { grid-template-columns: repeat(3, 1fr); gap: 3px; }
+
+  .services-layout { grid-template-columns: 1fr; gap: 3rem; }
+
+  #about { grid-template-columns: 1fr; }
+  .about-image { min-height: 300px; }
+  .about-content { padding: 4rem 2rem; }
+
+  .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+
+  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+}
